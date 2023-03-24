@@ -1,0 +1,103 @@
+
+*{
+  font-family: 'Khmer OS Siemreap';
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 3px gray;
+  cursor: pointer;
+  z-index:2;
+}
+
+.plus,.minus{
+  cursor: pointer;
+}
+
+#content{
+  height:100vh;
+}
+
+.productName{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding:5px 0;
+}
+
+#riel,#dollar{
+  cursor:pointer;
+}
+
+#riel:hover,#dollar:hover,#currency:hover{
+  background-color: rgb(25,135,84);
+  color: white;
+}
+.pizza-img{
+  transition: all .9s ease-out;
+}
+.pizza-img:hover{
+  cursor:pointer;
+  transform: rotate(180deg);
+  cursor:pointer;
+}
+
+/* edit layout to print invoice */
+@media print {
+
+  body * {
+    display: none;
+  }
+
+  #content * {
+    display: block;
+  }
+
+  #content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid transparent !important;
+  }
+
+  .order{
+    display: none !important;
+  }
+
+  .invoice{
+    display: block !important;
+    font-weight: bold !important;
+  }
+
+  tr {
+    display: flex !important;
+    border: 1px solid transparent !important;
+  }
+  
+  td,th{
+    display: inline-block;
+    width: 300px;
+  }
+
+  button{
+    display: none !important;
+  }
+
+  #total{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .noItem{
+    margin: 0 auto;
+  }
+
+  #border{
+    border: 0px solid transparent !important;
+  }
+
+}
